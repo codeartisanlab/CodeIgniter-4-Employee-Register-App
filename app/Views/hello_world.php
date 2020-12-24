@@ -7,5 +7,9 @@
 </head>
 <body>
 	<h3>Hello World</h3>
+	<?php
+	echo '<pre>';
+	print_r($employees);
+	?>
 </body>
 </html>
