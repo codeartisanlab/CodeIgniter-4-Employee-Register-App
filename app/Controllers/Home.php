@@ -1,10 +1,13 @@
 <?php namespace App\Controllers;
 use CodeIgniter\Controller;
+use App\Models\EmployeeModel;
 class Home extends Controller
 {
 	public function index()
 	{
-		return view('welcome_message');
+		$model=new EmployeeModel();
+		$data['employees']=$model->getAll();
+		return view('home.php',$data);
 	}
 
 	//--------------------------------------------------------------------
