@@ -17,4 +17,10 @@ class Home extends Controller
 		return view('hello_world.php');
 	}
 
+	// Add Page
+	function add_data(){
+		$data['pageTitle']='Add Data';
+		return view('add.php',$data);
+	}
+
 }
