@@ -4,18 +4,35 @@
 <?php $this->endSection(); ?>
 <?php $this->section('content'); ?>
 <div class="card">
-	<h5 class="card-header">Add Data</h5>
+	<h5 class="card-header">Add Data <a href="./" class="btn btn-sm btn-success float-end">All Data</a></h5>
 	<div class="card-body">
-		<form>
+		<?php
+			$errors=\Config\Services::validation()->getErrors();
+			if($errors!==''){
+				?>
+				<div class="alert alert-danger">
+					<?php
+					foreach($errors as $e){
+						?>
+						<p><?php echo $e; ?></p>
+						<?php
+					}
+					?>
+				</div>
+				<?php
+			}
+		?>
+		<form method="post" action="add">
+			<?php echo csrf_field(); ?>
 			<table class="table table-bordered table-hover">
 				<tr>
-					<th>Full Name</th>
+					<th>Full Name <span class="text-danger">*</span></th>
 					<td>
 						<input type="text" class="form-control" name="full_name" />
 					</td>
 				</tr>
 				<tr>
-					<th>Email</th>
+					<th>Email <span class="text-danger">*</span></th>
 					<td>
 						<input type="email" class="form-control"  name="email" />
 					</td>

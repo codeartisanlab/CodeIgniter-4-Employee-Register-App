@@ -8,7 +8,7 @@
 <body>
 	<div class="container mt-5">
 		<div class="card">
-			<h5 class="card-header">All Data</h5>
+			<h5 class="card-header">All Data <a href="./add" class="btn btn-sm btn-success float-end">Add Data</a></h5>
 			<div class="card-body">
 				<table class="table table-bordered table-hover">
 					<tr>
