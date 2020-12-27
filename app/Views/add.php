@@ -8,7 +8,7 @@
 	<div class="card-body">
 		<?php
 			$errors=\Config\Services::validation()->getErrors();
-			if($errors!==''){
+			if(!empty($errors)){
 				?>
 				<div class="alert alert-danger">
 					<?php
@@ -19,6 +19,12 @@
 					}
 					?>
 				</div>
+				<?php
+			}
+
+			if(isset($status)){
+				?>
+				<p class="alert alert-success"><?php echo $status; ?></p>
 				<?php
 			}
 		?>
@@ -76,7 +82,7 @@
 				<tr>
 					<th>Active Status</th>
 					<td>
-						<input type="text" class="form-control" name="status" />
+						<input type="text" class="form-control" name="is_active" />
 					</td>
 				</tr>
 				<tr>

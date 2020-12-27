@@ -19,10 +19,26 @@ class Home extends Controller
 
 	// Add Page
 	function add_data(){
+		$model=new EmployeeModel();
 		if($this->request->getMethod()=='post' && $this->validate([
 			'full_name'=>'required',
 			'email'=>'required'
 		]));
+
+			if($model->save([
+				'full_name'=>$this->request->getPost('full_name'),
+				'email'=>$this->request->getPost('email'),
+				'mobile'=>$this->request->getPost('mobile'),
+				'address'=>$this->request->getPost('address'),
+				'department'=>$this->request->getPost('department'),
+				'salary'=>$this->request->getPost('salary'),
+				'doj'=>$this->request->getPost('doj'),
+				'dor'=>$this->request->getPost('dor'),
+				'is_active'=>$this->request->getPost('is_active'),
+			])){
+				$data['status']='Data has been added.';
+			}
+
 		$data['pageTitle']='Add Data';
 		return view('add.php',$data);
 	}
