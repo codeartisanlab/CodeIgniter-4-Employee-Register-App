@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/hello-world', 'Home::hello_world');
 $routes->match(['get','post'],'/add', 'Home::add_data');
+$routes->match(['get','post'],'/update/(:num)', 'Home::update_data/$1');
 /**
  * --------------------------------------------------------------------
  * Additional Routing

@@ -27,7 +27,7 @@
 								<td><?php echo $emp['mobile']; ?></td>
 								<td><?php echo $emp['department']; ?></td>
 								<td>
-									<a href="#" class="btn btn-sm btn-primary">Modify</a>
+									<a href="<?php echo site_url('update/'.$emp['id']); ?>" class="btn btn-sm btn-primary">Modify</a>
 									<a href="#" class="btn btn-sm btn-danger">Delete</a>
 								</td>
 							</tr>
