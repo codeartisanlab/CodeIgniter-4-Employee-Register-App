@@ -69,4 +69,11 @@ class Home extends Controller
 		return view('update.php',$data);
 	}
 
+	// Delete Data
+	function delete_data($id){
+		$model=new EmployeeModel();
+		$model->delete($id);
+		return redirect()->to(site_url());
+	}
+
 }

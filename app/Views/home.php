@@ -28,7 +28,7 @@
 								<td><?php echo $emp['department']; ?></td>
 								<td>
 									<a href="<?php echo site_url('update/'.$emp['id']); ?>" class="btn btn-sm btn-primary">Modify</a>
-									<a href="#" class="btn btn-sm btn-danger">Delete</a>
+									<a onclick="return confirm('Are you sure to delete this data?')" href="<?php echo site_url('delete/'.$emp['id']); ?>" class="btn btn-sm btn-danger">Delete</a>
 								</td>
 							</tr>
 							<?php
